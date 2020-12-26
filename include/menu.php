@@ -4,13 +4,12 @@
 <header id="site-header" class="fixed-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark stroke">
-            <h1><a class="navbar-brand" href="index.html">
-                    <span class="sub-log">In</span>dustrie
-                </a></h1>
-            <!-- if logo is image enable this
-          <a class="navbar-brand" href="#index.html">
-              <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-          </a> -->
+            <h1>
+                <a class="navbar-brand" href="<?=$site_href ?>">
+                    <img src="assets/images/logo.png" width="50px" height="50px">
+                    ALMİLA AMBALAJ
+                </a>
+            </h1>
             <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
                     data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -21,21 +20,26 @@
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mx-lg-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="about.php">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact</a>
-                    </li>
+                    <span class="sr-only">(current)</span>
+                    <?php
+                    $nav = $db->query("SELECT * FROM navbar WHERE nav_parent = 0");
+                    if($nav->rowCount())
+                    {
+                        foreach ($nav as $navRow)
+                        {
+                            echo '
+                            <li class="nav-item">
+                                <a class="nav-link" href="'. $navRow['nav_href'] .'">' . $navRow['nav_title'] . '</a>
+                            </li>';
+                        }
+                    }
+
+                    ?>
+                    <!--
                     <li class="top-quote ml-lg-4 mt-lg-0 mt-3">
                         <a href="contact.html" class="btn btn-style btn-primary">Get a Quote</a>
                     </li>
+                    -->
                 </ul>
             </div>
             <!-- toggle switch for light and dark theme -->

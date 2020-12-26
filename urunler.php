@@ -13,7 +13,7 @@ Author URL: http://w3layouts.com
   <link href="//fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
   <!-- Template CSS -->
-  <link rel="stylesheet" href="assets/css/style-starter.css">
+  <link rel="stylesheet" href="assets/css/style-starter.php">
 </head>
 
 <body>
@@ -45,14 +45,14 @@ Author URL: http://w3layouts.com
               <a class="nav-link" href="about.php">About</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="services.html">Services</a>
+              <a class="nav-link" href="urunler.php">Services</a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link" href="contact.php">Contact</a>
+              <a class="nav-link" href="iletisim.php">Contact</a>
             </li>
             <li class="top-quote ml-lg-4 mt-lg-0 mt-3">
-              <a href="contact.php" class="btn btn-style btn-primary">Get a Quote</a>
+              <a href="iletisim.php" class="btn btn-style btn-primary">Get a Quote</a>
             </li>
           </ul>
         </div>
@@ -103,30 +103,30 @@ Author URL: http://w3layouts.com
             <p class="mt-4">Lorem ipsum dolor sit amet,Ea sed illum facere aperiam sequi optio consectetur adipisicing
               elit. Cras varius lorem ac velit pharetra, non scelerisque mi vulputate. Phasellus bibendum.</p>
             <div class="w3l-button mt-lg-5 mt-4">
-              <a href="services.html" class="btn btn-style btn-primary mr-2">Read More</a>
+              <a href="urunler.php" class="btn btn-style btn-primary mr-2">Read More</a>
             </div>
           </div>
           <div class="col-lg-6 cwp23-text align-self mt-lg-0 mt-5 pl-lg-5">
             <div class="cwp23-text-cols">
               <div class="column">
                 <span class="fa fa-clock-o" aria-hidden="true"></span>
-                <a href="services.html">24/7 availability</a>
+                <a href="urunler.php">24/7 availability</a>
                 <p>consectetur adipisicing elit, et sed do eiusmod tempor Lorem ipsum dolor sit amet. </p>
               </div>
               <div class="column">
                 <span class="fa fa-cogs" aria-hidden="true"></span>
-                <a href="services.html">Work Facilities</a>
+                <a href="urunler.php">Work Facilities</a>
                 <p>consectetur adipisicing elit, et sed do eiusmod tempor Lorem ipsum dolor sit amet. </p>
               </div>
               <div class="column">
                 <span class="fa fa-mars" aria-hidden="true"></span>
-                <a href="services.html">
+                <a href="urunler.php">
                   No Obligation Quote</a>
                 <p>consectetur adipisicing elit, et sed do eiusmod tempor Lorem ipsum dolor sit amet. </p>
               </div>
               <div class="column">
                 <span class="fa fa-user" aria-hidden="true"></span>
-                <a href="services.html">Qualified Engineers</a>
+                <a href="urunler.php">Qualified Engineers</a>
                 <p>consectetur adipisicing elit, et sed do eiusmod tempor Lorem ipsum dolor sit amet. </p>
               </div>
             </div>
@@ -150,7 +150,7 @@ Author URL: http://w3layouts.com
             <p class="mb-sm-5 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla non ipsum soluta perferendis
               veniam qui esse magnam commodi quisquam vitae labore nemo at voluptatem, totam, minima recusandae
               assumenda. Sequi molestiae ex nihil ducimus modi blanditiis iure explicabo quas veritatis quasi.</p>
-              <a class="btn btn-style btn-white" href="contact.php"> Get a Quote</a>
+              <a class="btn btn-style btn-white" href="iletisim.php"> Get a Quote</a>
           </div>
         </div>
       </div>
@@ -266,9 +266,9 @@ Author URL: http://w3layouts.com
               <h6 class="footer-title-29">Useful Links</h6>
               <li><a href="index.php">Home</a></li>
               <li><a href="about.php">About</a></li>
-              <li><a href="services.html">Services</a></li>
+              <li><a href="urunler.php">Services</a></li>
               <li><a href="#"> Blog posts</a></li>
-              <li><a href="contact.php">Contact us</a></li>
+              <li><a href="iletisim.php">Contact us</a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-list-29 footer-3 mt-lg-0 mt-5">

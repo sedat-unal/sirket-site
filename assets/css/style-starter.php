@@ -1,3 +1,5 @@
+<?php header("Content-type: text/css"); ?>
+
 @charset "UTF-8";
 /*--
 Author: W3layouts
@@ -14948,33 +14950,116 @@ nav ul li a:hover {
 .w3l-main-slider .companies20-content {
   position: relative;
 }
-
-.w3l-main-slider .banner-view {
-  background: url(../images/banner1.jpg) no-repeat center;
-  background-size: cover;
-  min-height: 100vh;
-  position: relative;
-  z-index: 0;
-  display: grid;
-  align-items: center;
-  padding: 3em 0;
+<?php
+include("../../settings/connection.php");
+try
+{
+    $db = new PDO('mysql:host=localhost;dbname=almhizlituketim', "root", "");
 }
-
-.w3l-main-slider .banner-top1 {
-  background: url(../images/banner2.jpg) no-repeat center;
-  background-size: cover;
+catch (PDOException $e)
+{
+    print $e->getMessage();
+    die();
 }
+$countSlider = $db->query("SELECT * FROM slider WHERE slider_status = 1");
+$count = $countSlider->rowCount();
+if ($count > 0)
+{
+    if ($count == 1)
+    {
+        $slider = $db->query("SELECT * FROM slider WHERE slider_id = 1");
+        $sRow = $slider->fetch(PDO::FETCH_ASSOC);
+    ?>
+        .w3l-main-slider .banner-view {
+          background: url(../images/<?=$sRow["slider_img"]; ?>) no-repeat center;
+          background-size: cover;
+          min-height: 100vh;
+          position: relative;
+          z-index: 0;
+          display: grid;
+          align-items: center;
+          padding: 3em 0;
+        }
+    <?php
+    }
+    else if($count == 2)
+    {
+        $slider = $db->query("SELECT * FROM slider WHERE slider_status = 1");
+        $srow[] = $slider->fetchAll();
 
-.w3l-main-slider .banner-top2 {
-  background: url(../images/banner3.jpg) no-repeat center;
-  background-size: cover;
+        ?>
+        .w3l-main-slider .banner-view {
+          background: url(../images/<?=$srow[0][0]["slider_img"]; ?>) no-repeat center;
+          background-size: cover;
+          min-height: 100vh;
+          position: relative;
+          z-index: 0;
+          display: grid;
+          align-items: center;
+          padding: 3em 0;
+        }
+        .w3l-main-slider .banner-top1 {
+            background: url(../images/<?=$srow[0][1]["slider_img"]; ?>) no-repeat center;
+            background-size: cover;
+        }
+        <?php
+    }
+    else if ($count == 3)
+    {
+        $slider = $db->query("SELECT * FROM slider WHERE slider_status = 1");
+        $srow[] = $slider->fetchAll();
+        ?>
+        .w3l-main-slider .banner-view {
+          background: url(../images/<?=$srow[0][0]["slider_img"]; ?>) no-repeat center;
+          background-size: cover;
+          min-height: 100vh;
+          position: relative;
+          z-index: 0;
+          display: grid;
+          align-items: center;
+          padding: 3em 0;
+        }
+        .w3l-main-slider .banner-top1 {
+            background: url(../images/<?=$srow[0][1]["slider_img"]; ?>) no-repeat center;
+            background-size: cover;
+        }
+        .w3l-main-slider .banner-top2 {
+          background: url(../images/<?=$srow[0][2]["slider_img"]; ?>) no-repeat center;
+          background-size: cover;
+        }
+        <?php
+    }
+    else
+    {
+        $slider = $db->query("SELECT * FROM slider WHERE slider_status = 1");
+        $srow[] = $slider->fetchAll();
+        ?>
+        .w3l-main-slider .banner-view {
+          background: url(../images/<?=$srow[0][0]["slider_img"]; ?>) no-repeat center;
+          background-size: cover;
+          min-height: 100vh;
+          position: relative;
+          z-index: 0;
+          display: grid;
+          align-items: center;
+          padding: 3em 0;
+        }
+        .w3l-main-slider .banner-top1 {
+            background: url(../images/<?=$srow[0][1]["slider_img"]; ?>) no-repeat center;
+            background-size: cover;
+        }
+        .w3l-main-slider .banner-top2 {
+          background: url(../images/<?=$srow[0][2]["slider_img"]; ?>) no-repeat center;
+          background-size: cover;
+        }
+        .w3l-main-slider .banner-top3 {
+          background: url(../images/<?=$srow[0][3]["slider_img"]; ?>) no-repeat center;
+          background-size: cover;
+        }
+        <?php
+    }
 }
-
-.w3l-main-slider .banner-top3 {
-  background: url(../images/banner4.jpg) no-repeat center;
-  background-size: cover;
-}
-
+?>
 .w3l-main-slider .banner-view:before {
   content: "";
   background: rgba(0, 0, 0, 0.51);

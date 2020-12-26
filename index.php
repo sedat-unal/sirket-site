@@ -11,74 +11,44 @@ include("include/menu.php");
 <section class="w3l-main-slider" id="home">
     <div class="companies20-content">
         <div class="owl-one owl-carousel owl-theme">
-            <div class="item">
-                <li>
-                    <div class="slider-info banner-view bg bg2">
-                        <div class="banner-info">
-                            <div class="container">
-                                <div class="banner-info-bg">
-                                    <h5>Provide Effective Building Services</h5>
-                                    <p class="mt-4 pr-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-                                        quisquam, doloremque placeat aut numquam ipsam. </p>
-                                    <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="about.php"> About Us</a>
-                                    <a class="btn btn-style btn-white mt-sm-5 mt-4" href="contact.php"> Contact Us</a>
+            <?php
+            $slider = $db->query("SELECT * FROM slider");
+            if($slider->rowCount())
+            {
+                foreach ($slider as $item) {
+                    ?>
+                    <div class="item">
+                        <li>
+                            <div class="slider-info <?=$item["slider_class"]?>  bg bg2">
+                                <div class="banner-info">
+                                    <div class="container">
+                                        <div class="banner-info-bg">
+                                            <h5><?=$item["slider_title"]; ?></h5>
+                                            <p class="mt-4 pr-lg-4"><?=$item["slider_content"]; ?></p>
+                                            <?php
+                                            if ($item["slider_btn1"] != NULL)
+                                            {
+                                                ?>
+                                                <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="<?=$site_href . $item["slider_btn1_href"]?>"> <?=$item["slider_btn1"]?></a>
+                                                <?php
+                                            }
+                                            if ($item["slider_btn2"] != NULL)
+                                            {
+                                                ?>
+                                                <a class="btn btn-style btn-white mt-sm-5 mt-4" href="<?=$site_href . $item["slider_btn2_href"]?>"> <?=$item["slider_btn2"];?></a>
+                                                <?php
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </li>
                     </div>
-                </li>
-            </div>
-            <div class="item">
-                <li>
-                    <div class="slider-info  banner-view banner-top1 bg bg2">
-                        <div class="banner-info">
-                            <div class="container">
-                                <div class="banner-info-bg">
-                                    <h5>Provide Effective Building Solutions</h5>
-                                    <p class="mt-4 pr-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-                                        quisquam, doloremque placeat aut numquam ipsam. </p>
-                                    <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="about.php"> About Us</a>
-                                    <a class="btn btn-style btn-white mt-sm-5 mt-4" href="contact.php"> Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </div>
-            <div class="item">
-                <li>
-                    <div class="slider-info banner-view banner-top2 bg bg2">
-                        <div class="banner-info">
-                            <div class="container">
-                                <div class="banner-info-bg">
-                                    <h5>Provide Effective Building Services</h5>
-                                    <p class="mt-4 pr-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-                                        quisquam, doloremque placeat aut numquam ipsam. </p>
-                                    <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="about.php"> About Us</a>
-                                    <a class="btn btn-style btn-white mt-sm-5 mt-4" href="contact.php"> Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </div>
-            <div class="item">
-                <li>
-                    <div class="slider-info banner-view banner-top3 bg bg2">
-                        <div class="banner-info">
-                            <div class="container">
-                                <div class="banner-info-bg">
-                                    <h5>Provide Effective Building Solutions</h5>
-                                    <p class="mt-4 pr-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-                                        quisquam, doloremque placeat aut numquam ipsam. </p>
-                                    <a class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2" href="about.php"> About Us</a>
-                                    <a class="btn btn-style btn-white mt-sm-5 mt-4" href="contact.php"> Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </div>
+                    <?php
+                }
+            }
+            ?>
         </div>
         <div class="arrow-downhny">
             <a href="#about" class="arrow-down text-center position-absolute">
@@ -326,7 +296,7 @@ include("include/menu.php");
         </div>
         <div class="buttons mt-5">
             <a href="about.php" class="btn btn-style btn-primary mr-2">Read More</a>
-            <a href="contact.php" class="btn btn-style btn-secondary ml-2">Get a quote</a>
+            <a href="iletisim.php" class="btn btn-style btn-secondary ml-2">Get a quote</a>
         </div>
     </div>
 </section>
